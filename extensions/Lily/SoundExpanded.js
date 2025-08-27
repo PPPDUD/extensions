@@ -317,7 +317,29 @@
             acceptReporters: true,
             items: "_getTargets",
           },
-        },
+         {
+            opcode: "play",
+            blockType: Scratch.BlockType.COMMAND,
+            text: Scratch.translate("start sound from url: [path]"),
+            arguments: {
+              path: {
+                type: Scratch.ArgumentType.STRING,
+                defaultValue: "https://extensions.turbowarp.org/meow.mp3",
+              },
+            },
+          },
+          {
+            opcode: "playUntilDone",
+            blockType: Scratch.BlockType.COMMAND,
+            text: Scratch.translate("play sound from url: [path] until done"),
+            arguments: {
+              path: {
+                type: Scratch.ArgumentType.STRING,
+                defaultValue: "https://extensions.turbowarp.org/meow.mp3",
+              },
+            },
+          },
+        ],
       };
     }
 
@@ -636,3 +658,4 @@
 
   Scratch.extensions.register(new SoundExpanded());
 })(Scratch);
+
